@@ -1,0 +1,26 @@
+﻿<Page x:Class="pr5.StatusesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Statuses Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя часть страницы с полем ввода -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+            <TextBox x:Name="statusTypeTextBox" Text="Status Type" Tag="Status Type" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+            <Button x:Name="edit" Content="Edit" Click="Edit_Click" Margin="5"/>
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- Центральная часть страницы с таблицей -->
+        <DataGrid x:Name="StatusesDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Status Type" Binding="{Binding Status_Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

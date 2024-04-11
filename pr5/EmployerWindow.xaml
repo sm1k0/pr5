@@ -1,0 +1,20 @@
+﻿<Window x:Class="pr5.EmployerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Employee Window" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="MenuListView" Grid.Column="0" SelectionChanged="MenuListView_SelectionChanged">
+            <ListViewItem Content="Training Data"/>
+            <ListViewItem Content="Nationality"/>
+            <ListViewItem Content="Employers"/>
+            <ListViewItem Content="Position"/>
+            <ListViewItem Content="New Employees"/>
+        </ListView>
+        <Frame x:Name="MainFrame" Grid.Column="1"/>
+        <Button Content="Выйти из пользователя" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,10" Click="LogoutButton_Click"/>
+    </Grid>
+</Window>

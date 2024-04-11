@@ -1,0 +1,26 @@
+﻿<Page x:Class="pr5.TrainingDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Training Data Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель с кнопками и полями ввода -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+            <TextBox x:Name="trainingDetailsTextBox" Text="Training Details" Tag="Training Details" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+            <Button x:Name="edit" Content="Edit" Click="Edit_Click" Margin="5"/>
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- Таблица с данными о тренировках -->
+        <DataGrid x:Name="TrainingDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Training Details" Binding="{Binding Training_Details}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

@@ -1,0 +1,46 @@
+﻿<Page x:Class="pr5.EmployersPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Employers Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5">
+                <TextBox x:Name="text1" Text="Employer Name" Tag="Employer Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <TextBox x:Name="text2" Text="Employer Last Name" Tag="Employer Last Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <TextBox x:Name="text3" Text="Employer Middle Name" Tag="Employer Middle Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <ComboBox x:Name="positionComboBox" DisplayMemberPath="Position_Title" SelectedValuePath="Position_ID" Margin="5"/>
+
+                <TextBox x:Name="text9" Text="Username" Tag="Username" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+
+                <TextBox x:Name="passwordBox" Text="Password" Tag="Password" Margin="5" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus"/>
+
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+                <Button Content="Add" Click="Add_Click" Margin="5"/>
+                <Button x:Name="edit" Content="Edit" Click="Edit_Click" Margin="5"/>
+                <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid x:Name="EmployersDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10" SelectionChanged="EmployersDataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Employer Name" Binding="{Binding Employer_Name}"/>
+                <DataGridTextColumn Header="Employer Last Name" Binding="{Binding Employee_Last_Name}"/>
+                <DataGridTextColumn Header="Employer Middle Name" Binding="{Binding Employee_Middle_Name}"/>
+                <DataGridTextColumn Header="Roles" Binding="{Binding Roles.Roless}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

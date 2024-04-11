@@ -1,0 +1,53 @@
+﻿<Page x:Class="pr5.EmployeesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Employees Page">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5">
+                <TextBox x:Name="text1" Text="Last Name" Tag="Last Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <TextBox x:Name="text2" Text="First Name" Tag="First Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <TextBox x:Name="text3" Text="Middle Name" Tag="Middle Name" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <TextBox x:Name="text4" Text="Phone Number" Tag="Phone Number" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                <ComboBox x:Name="positionComboBox" DisplayMemberPath="Position_Title" SelectedValuePath="Position_ID" Margin="5"/>
+                <ComboBox x:Name="addressComboBox" DisplayMemberPath="S_Address" SelectedValuePath="S_Address" Margin="5"/>
+              
+                <TextBox x:Name="text9" Text="Username" Tag="Username" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+                
+                <TextBox x:Name="passwordBox" Text="Password" Tag="Password" Margin="5" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus"/>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+                <Button Content="Add" Click="Add_Click" Margin="5"/>
+                <Button Content="Edit" Click="Edit_Click" Margin="5"/>
+                <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+            </StackPanel>
+        </Grid>
+
+        <DataGrid x:Name="EmployeesDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Last_Name}"/>
+                <DataGridTextColumn Header="First Name" Binding="{Binding First_Name}"/>
+                <DataGridTextColumn Header="Middle Name" Binding="{Binding Middle_Name}"/>
+                <DataGridTextColumn Header="Phone" Binding="{Binding Phone_Number}"/>
+                <DataGridTextColumn Header="Position Name" Binding="{Binding Position.Position_Title}"/>
+            
+                <DataGridTextColumn Header="Store Address" Binding="{Binding Store.S_Address}"/>
+                <DataGridTextColumn Header="Role Name" Binding="{Binding Roles.Roless}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

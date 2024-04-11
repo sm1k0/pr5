@@ -1,0 +1,29 @@
+﻿<Page x:Class="pr5.WarehousePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Warehouse Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя часть страницы с полями ввода -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+            <ComboBox x:Name="productComboBox" DisplayMemberPath="Product_Name" SelectedValuePath="Product_ID" Margin="5"/>
+            <TextBox x:Name="quantityTextBox" Text="Quantity" Tag="Quantity" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+            <Button Content="Edit" Click="Edit_Click" Margin="5"/>
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- Центральная часть страницы с таблицей -->
+        <DataGrid x:Name="WarehouseDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Product" Binding="{Binding Product.Product_Name}"/>
+                <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                <DataGridTextColumn Header="Availability" Binding="{Binding W_Availability}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

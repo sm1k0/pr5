@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="35572733289b421f81e157dcc22dfb8b" Name="Diagram1" ZoomLevel="57">
+        <EntityTypeShape EntityType="prModel.Client" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Employees" Width="1.5" PointX="8.25" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Employers" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Nationality" Width="1.5" PointX="5.25" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.New_Employees" Width="1.5" PointX="7.5" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Orders" Width="1.5" PointX="10.5" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Position" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Product" Width="1.5" PointX="10.625" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Roles" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Statuses" Width="1.5" PointX="3.375" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Store" Width="1.5" PointX="15.125" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Training_Data" Width="1.5" PointX="10.125" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.User_Authentication" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="prModel.Warehouse" Width="1.5" PointX="12.875" PointY="10.25" IsExpanded="true" />
+        <AssociationConnector Association="prModel.FK_Authorization_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Client_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Client_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Authorization_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Employees_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Employees_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Position_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Store_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Authorization_Employers" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Employers_New_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Employers_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Position_Employers" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Nationality_New_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Position_New_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Training_Data_New_Employees" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Statuses_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Store_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Product_Warehouse" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_User_Authentication_Roles" ManuallyRouted="false" />
+        <AssociationConnector Association="prModel.FK_Warehouse_Store" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

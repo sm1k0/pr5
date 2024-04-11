@@ -1,0 +1,33 @@
+﻿<Page x:Class="pr5.RolesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Roles Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Panel с элементами управления -->
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <!-- Текстбокс для ввода роли -->
+            <TextBox x:Name="RoleNameTextBox" Text="Enter Role Name" Margin="5"/>
+
+            <!-- Кнопка добавления -->
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+
+            <!-- Кнопка редактирования -->
+            <Button Content="Edit" Click="Edit_Click" Margin="5"/>
+
+            <!-- Кнопка удаления -->
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- DataGrid для отображения списка ролей -->
+        <DataGrid x:Name="RolesDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Roles" Binding="{Binding Roless}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

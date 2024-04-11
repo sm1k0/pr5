@@ -1,0 +1,30 @@
+﻿<Page x:Class="pr5.UserAuthenticationPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="User Authentication Page">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Верхняя часть страницы с полями ввода -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="5">
+            <TextBox x:Name="usernameTextBox" Text="Username" Tag="Username" Margin="5" GotFocus="TextBox_GotFocus" LostFocus="TextBox_LostFocus"/>
+            <PasswordBox x:Name="passwordBox" Password="Password" Tag="Password" Margin="5" GotFocus="PasswordBox_GotFocus" LostFocus="PasswordBox_LostFocus"/>
+            <ComboBox x:Name="roleComboBox" DisplayMemberPath="Roless" SelectedValuePath="Role_ID" Margin="5"/>
+            <Button Content="Add" Click="Add_Click" Margin="5"/>
+            <Button Content="Edit" Click="Edit_Click" Margin="5"/>
+            <Button Content="Delete" Click="Delete_Click" Margin="5"/>
+            <Button Content="Authenticate" Click="Authenticate_Click" Margin="5"/>
+        </StackPanel>
+
+        <!-- Центральная часть страницы с таблицей -->
+        <DataGrid x:Name="UserAuthenticationDataGrid" Grid.Row="1" AutoGenerateColumns="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Username" Binding="{Binding Username}"/>
+                <DataGridTextColumn Header="Role" Binding="{Binding Roles.Roless}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

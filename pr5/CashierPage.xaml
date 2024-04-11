@@ -1,0 +1,40 @@
+﻿<Page x:Class="pr5.CashierPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:pr5"
+    mc:Ignorable="d"
+    Title="CashierPage">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Товары -->
+        <DataGrid x:Name="ProductsDataGrid" Grid.Row="0" ItemsSource="{Binding Products}" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Product_ID}"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Product_Name}"/>
+                <DataGridTextColumn Header="Цена" Binding="{Binding Price}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <!-- Кнопка добавления товара в чек -->
+        <Button Grid.Row="1" Content="Добавить в чек" Click="AddToReceipt_Click"/>
+
+        <!-- Чек -->
+        <ListBox x:Name="ReceiptListBox" Grid.Row="2"/>
+
+        <!-- Информация о покупке и кнопки управления -->
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="Итого к оплате:"/>
+            <TextBlock x:Name="TotalAmountTextBlock"/>
+            <TextBox x:Name="AmountPaidTextBox" Text="0"/>
+            <Button Content="Выдать чек" Click="GenerateReceipt_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
